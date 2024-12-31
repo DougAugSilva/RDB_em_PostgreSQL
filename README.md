@@ -19,7 +19,7 @@ O uso do SQL se faz necessário por conta da grande quantidade de dados que esta
 
 ### Ferramentas Utilizadas
 - **PostgreSQL:** Utilizado para criar e admninistrar o banco de dados, foi escolhido este por sua populariade e simplicidade.
-- **Visua Studio Code:** Utilizado para compilar os códiogos e Querys em SQL
+- **Visual Studio Code:** Utilizado para compilar os códiogos e Querys em SQL
 - **SQL:** Utilizado para toda a parte de filtragfem, ordenação e extração dos dados.
 - **R:** Utilizado para a geração dos gráficos na análise.
 - **Draw.io:** Utilizado para cirar o diagrama do banco de dados relacional.
