@@ -1,5 +1,5 @@
 # Criando um RDB no PostgreSQL e <br/> Analisando Vagas de Emprego
-Este projeto é baseado no curso *SQL for Data Analytics* do analista de dados *Luke Barousse*, o projeto consiste me criar um banco de dados relacional (RDB) utilizando *PostgreSQL* integrado com *VsCode*. Serão adicionados ao banco de dados arquivos .csv contendo inforemações sobre anuncios de vagas de emprego na area de dados no ano de 2023. 
+Este projeto é baseado no curso *SQL for Data Analytics* do analista de dados [Luke Barousse](https://github.com/lukebarousse), o projeto consiste me criar um banco de dados relacional (RDB) utilizando *PostgreSQL* integrado com *VsCode*. Serão adicionados ao banco de dados arquivos .csv contendo inforemações sobre anuncios de vagas de emprego na area de dados no ano de 2023. 
 
 ## Introdução
 ### Sobre os Dados
@@ -9,11 +9,11 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
-1. Quais os empregos de analistas de dados com os melhores salários?
-2. Quais skills (habilidades) são as mais requisitadas nestes trabalhos?
-3. Quais as skills (habilidades) com maior demanda para anlisrtas de dados?
-4. Quais skills (habilidades) estão associadas com os maiores salários?
-5. Quais são as melhores skills (habilidades) parta se aprender?
+1. mudar pergunta
+2. mudar pergunta
+3. mudar pergunta
+4. mudar pergunta
+5. mudar pergunta
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
