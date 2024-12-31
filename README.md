@@ -9,11 +9,11 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
-1. mudar pergunta
-2. mudar pergunta
-3. mudar pergunta
-4. mudar pergunta
-5. mudar pergunta
+1. Quais empregos na área de dados possuem os maiores salárioa?
+2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
+3. Quais habilidades estão listadas nas vagas com os maiores salários?
+4. Em quais paises há os maiores salários para cientistas de dados?
+5. Quais as Habilidades associadas aos maiores salários?
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
