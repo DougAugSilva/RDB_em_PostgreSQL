@@ -80,3 +80,5 @@ SELECT * FROM job_postings_fact LIMIT 10
 SELECT * FROM skills_job_dim LIMIT 10
 ```
 Com isso o banco de dados relacional está criado, e os dados prontos para a análise.
+
+## Análise dos Dados
