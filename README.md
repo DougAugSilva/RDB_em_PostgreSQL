@@ -9,7 +9,7 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
-1. Quais os empregos de analisatas de ddos com os melhores salários?
+1. Quais os empregos de analistas de dados com os melhores salários?
 2. Quais skills (habilidades) são as mais requisitadas nestes trabalhos?
 3. Quais as skills (habilidades) com maior demanda para anlisrtas de dados?
 4. Quais skills (habilidades) estão associadas com os maiores salários?
@@ -57,7 +57,7 @@ Serão retornadas tabelas vazias, para adicionarmos os dados precisamos dos aqui
 ```sql
 COPY company_dim --tabela a ser direcionada
 FROM 'local do arquivo em seu computador' 
-WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8'); --especifica o formato do arquivo e a formatacao
+WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8'); --especifica o formato e a formatacao
 
 COPY skills_dim
 FROM 'local do arquivo em seu computador'
