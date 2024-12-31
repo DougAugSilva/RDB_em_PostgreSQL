@@ -18,7 +18,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
 ### Ferramentas Utilizadas
-- **PostgreSQL:** Utilizado para criar e admninistrar o banco de dados, foi escolhido este por sua populariade e simplicidade.
+- **PostgreSQL:** Utilizado para criar e admninistrar o banco de dados.
 - **Visual Studio Code:** Utilizado para compilar os códiogos e Querys em SQL
 - **SQL:** Utilizado para toda a parte de filtragfem, ordenação e extração dos dados.
 - **R:** Utilizado para a geração dos gráficos na análise.
