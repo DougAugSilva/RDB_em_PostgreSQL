@@ -3,7 +3,7 @@ Este projeto é baseado no curso *SQL for Data Analytics* do analista de dados *
 
 ## Introdução
 ### Sobre os Dados
-Os dados para o projeto foram retirados de arquivos .csv fornecidos pelo analista de dados *Luke Barousse* em seu curso *SQL for Data Analytics*, os dados originalmente foram coletados no site desenvolvido pelo próprio Luke chamado *Top Skills for Data Nerds*, podendo ser acessado por <https://www.datanerd.tech>. <br/>
+Os dados para o projeto foram retirados de arquivos .csv fornecidos pelo analista de dados *Luke Barousse* em seu curso *SQL for Data Analytics* disponivel no [link](https://www.lukebarousse.com/sql) , sendo originalmente coletados no site desenvolvido pelo próprio Luke chamado [Top Skills for Data Nerds](https://www.datanerd.tech). <br/>
 Como já citado, os dados incluem iformações sobre anuncio de vagas de empregos na area de dados no ano de 2023, sendo divididos em 4 tabelas contendo informações como *job_location* (localização do trabalho) e *skills* (habilidades), além é claro do slário de cada vaga.
 
 ### Objetivos da Análise e Justificando o Uso do SQL
@@ -53,7 +53,7 @@ SELECT * FROM skills_dim
 SELECT * FROM job_postings_fact
 SELECT * FROM skills_job_dim
 ```
-Serão retornadas tabelas vazias, para adicionarmos os dados precisamos dos aquivos .csv que eu inclui na pasta *dados* deste repositório, com isso executamos os comando abaixo para adicionarmos os daods as tabelas criadas:
+Serão retornadas tabelas vazias, para adicionarmos os dados precisamos dos aquivos .csv disponiveis em [link](https://www.lukebarousse.com/sql), com isso executamos os comandos abaixo para adicionarmos os dados as tabelas criadas:
 ```sql
 COPY company_dim --tabela a ser direcionada
 FROM 'local do arquivo em seu computador' 
