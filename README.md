@@ -9,7 +9,7 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
-1. Quais empregos na área de dados possuem os maiores salárioa?
+1. Quais empregos na área de dados possuem os maiores salários?
 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
 3. Quais habilidades estão listadas nas vagas com os maiores salários?
 4. Em quais paises há os maiores salários para cientistas de dados?
@@ -130,3 +130,44 @@ SELECT * FROM skills_job_dim LIMIT 10
 Com isso o banco de dados relacional está criado, e os dados prontos para a análise.
 
 ## Análise dos Dados
+Criado o banco de dados, podemos realizar nossas análise efetuando querys para responder nossas perguntas iniciais, serão também utilizados gráficos criados com a biblioteca *ggplot2* do *R* para um melhor entendimento dos dados coletados.
+
+### 1. Quais empregos na área de dados possuem os maiores salários?
+Precisamos extrair do banco de dados as colunas conmtendo as infromações com o id da vaga de emprego, seu nome e ordenalos pola média salarial anual. Também vamos extrair mais algumas indormações com um `LEFT JOIN` entre as tabelas *ob_postings_fact* e *company_dim*, para ssim termos mais indromações sobre a companhia. Executamos a seguinte query:
+```sql
+SELECT	
+    job_id,
+	job_title,
+	job_location, 
+	job_schedule_type,
+	salary_year_avg,
+	job_posted_date
+FROM
+    job_postings_fact
+LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+WHERE
+    salary_year_avg IS NOT NULL
+ORDER BY
+    salary_year_avg DESC
+LIMIT 10;
+```
+Com isso, me foi retornado uma tabela com os 10 empregos com as maiores médias salariais anuais. Pude extrair essa tabela em um arquivo .cvs e utilisa-las para fazer uma análise gráfica no R, executando os seguinte comandos:
+```r
+library(tidyverse)
+library(forcats)
+
+dados <- read.csv("local do arquivo .csv no seu computador")
+view(dados)
+colnames(dados)
+
+dados %>%
+  mutate(job_title = fct_reorder(job_title, salary_year_avg)) %>%
+    ggplot(aes(x = salary_year_avg, y = job_title)) + 
+    geom_bar(stat = "identity", fill = "blue") +
+    labs(x = "Média Salarial Anual em Dólares", y = "Nome da Vaga",
+         title = "Salários por Vaga na Área de Dados",
+         caption = "Escala em notação científica" )
+```
+A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado, com isso me foi retornado o seguinte gráfico.
+
+![grafico_1](https://github.com/DougAugSilva/RDB_em_PostgreSQL/blob/main/imagens/grafico_pergunta_1.png)
