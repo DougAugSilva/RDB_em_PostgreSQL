@@ -156,7 +156,7 @@ Com isso, me foi retornado uma tabela com os 10 empregos com as maiores médias 
 library(tidyverse)
 library(forcats)
 
-dados <- read.csv("local do arquivo .csv no seu computador")
+dados <- read.csv("local do arquivo .csv em seu computador")
 view(dados)
 colnames(dados)
 
@@ -168,6 +168,12 @@ dados %>%
          title = "Salários por Vaga na Área de Dados",
          caption = "Escala em notação científica" )
 ```
-A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado, com isso me foi retornado o seguinte gráfico.
+A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado, com isso me foi retornado o seguinte gráfico. Agora com o gráfico podenmos notar mais facilmente as relções das vagas com os salários.
 
 ![grafico_1](https://github.com/DougAugSilva/RDB_em_PostgreSQL/blob/main/imagens/grafico_pergunta_1.png)
+
+- Primeiro notamos que os maiores salários são referentes as vagas de cientistas de dados, com as duas vagas de *Senior Data Scientist* somando masi de um milhão de dólares anuais, com a vaga *Data Scientist* sozinha somando mais de 900 mil dólares ao ano.
+- A segunda area com os maiores salários são as de *Analistas de Dados*, possuindo salários anuais na casa dos 500 mil dólares.
+- Embora apareça em menor quantidade nas vagas com os maiores salários, também há vagas de *Engenheiros de Dados*, com uma em particular de trabalho Hinbrido com salário que pode chegar até 600 mil dólares ao ano.
+
+### 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
