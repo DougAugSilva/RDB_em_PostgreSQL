@@ -73,6 +73,7 @@ CREATE TABLE public.job_postings_fact(
 ```
 Detse modo, podemos criar a ultima tabela, denotada por *skills_job_dim*, nela fazemos referência as tabelas *job_postings_fact* e *skills_dim* para inserção de chaves estrangeiras, por isso a deixamos por último.
 ```sql
+-- Cria a tabela skills_job_dim table com a composição de uma chave primaria e uma chave estrangeira
 CREATE TABLE public.skills_job_dim(
     job_id INT,
     skill_id INT,
