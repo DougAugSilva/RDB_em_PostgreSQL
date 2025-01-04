@@ -12,8 +12,8 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 1. Quais empregos na área de dados possuem os maiores salários?
 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
 3. Quais habilidades estão listadas nas vagas com os maiores salários?
-4. Em quais paises há os maiores salários para cientistas de dados?
-5. Quais as Habilidades associadas aos maiores salários?
+4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
+5. Quais as melhores habilidades para se aprender baseado nos dados?
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
@@ -283,3 +283,45 @@ Pelo gráfico podemos notar que:
 - O *Sql* segue como a linguagem para banco de dados relacionais mais popular, sendo assim bastante rexcomendada tela em seu currículo.
 - O *Python* novamente se encontra ascima do *R* em uso, talvez por suas bibliotecas com ferramentas de inteligência artificial, um mercado com a demanda cada vez maior.
 - *Azure* e *Aws* empatam como ferramentas de nuvem, sendo assim ambas ótimas opções.
+
+![grafico_pergunta_3](https://github.com/DougAugSilva/RDB_em_PostgreSQL/blob/main/imagens/grafico_pergunta_3.png)
+
+### 4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
+Vamos vereificar quaal o salários médio em uma vaga para quem sabe uma determinada ferramenta, sendo que vamos verificar vagas de Analistas, Cientistas e Engenheiros de dados. Para tal, executamos a seguinte Query:
+```sql
+SELECT 
+    skills,
+    ROUND(AVG(salary_year_avg), 0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    (job_title_short = 'Data Analyst'
+    OR job_title_short = 'Data Scientist'
+    OR job_title_short = 'Data Engineer')
+    AND salary_year_avg IS NOT NULL
+    AND job_work_from_home = True 
+GROUP BY
+    skills
+ORDER BY
+    avg_salary DESC
+LIMIT 10;
+```
+Com os daddos que obtemos, podemos contruir a tabela abaixo, nela podemos notal algumas coisas:
+-
+-
+-
+
+| Ferramentas | Salário Médio Anual |
+|-------------|---------------------|
+| mongo       | $ 177.196           |
+| gdpr        | $ 170.953           |
+| neo4j       | $ 168.258           |
+| bitbucket   | $ 167.539           |
+| solidity    | $ 165.833           |
+| tidyverse   | $ 165.513           |
+| graphql     | $ 162.547           |
+| opencv      | $ 162.083           |
+| rust        | $ 161.879           |
+| watson      | $ 161.471           |
+
