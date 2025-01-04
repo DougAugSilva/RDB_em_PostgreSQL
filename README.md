@@ -9,8 +9,8 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
-1. Quais empregos na área de dados possuem os maiores salários?
-2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
+1. [Quais empregos na área de dados possuem os maiores salários?](1.-Quais-empregos-na-área-de-dados-possuem-os-maiores-salários?)
+2. [Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?](2.-Quais-as-ferramentes-mais-populares-entre-analista,-engenheiros-e-cientistas-de-dados?)
 3. Quais habilidades estão listadas nas vagas com os maiores salários?
 4. Em quais paises há os maiores salários para cientistas de dados?
 5. Quais as Habilidades associadas aos maiores salários?
@@ -176,4 +176,57 @@ A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado,
 - A segunda area com os maiores salários são as de *Analistas de Dados*, possuindo salários anuais na casa dos 500 mil dólares.
 - Embora apareça em menor quantidade nas vagas com os maiores salários, também há vagas de *Engenheiros de Dados*, com uma em particular de trabalho Hinbrido com salário que pode chegar até 600 mil dólares ao ano.
 
-### 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
+### 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?
+
+Para responder a segunda pergunta efetuaremos a query abaixo, mudando apenas a clausula `job_title_short` dentro do `WHERE` para Analista, Cientista e Engenherio dr dados, efetuando assim três consultas ao banco de dados
+```sql
+SELECT 
+    skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Analist' --mude para Data Scientist, Data Engenieer a cada Query
+    AND job_work_from_home = True 
+GROUP BY
+    skills
+ORDER BY
+    demand_count DESC
+LIMIT 5;
+```
+Efetuando a Query acima para cada tipo de vaga, conseguis as seguintes resultados:
+#### Analista de Dados
+Para anlistas de vagas a ferramenta mais exigida é o *SQL*, tendo quase o dobro de exigencias em vagas que *Exel* que fica em segundo lugar. Já em termos de linguagem de programação o *python* fica a frente do *R* que nem aparece entre as 5 ferramentas mais utilizadas.
+
+| Ferramenta | Número de Vagas |
+|------------|-----------------|
+| sql        |       7.291     | 
+| exel       |       4.611     |
+| python     |       4.330     |
+| tableau    |       3.745     |
+| power bi   |       2.609     |
+
+#### Cientista de Dados
+Já para *Cientistas de Dados* temos de longe que a linguagem de programação mais popular novamente é o *python*, por causa de suas ferramentas para criação de algoritmos de aprendizado de máquina, apesar do *R* aparecer em terceioro lugar logo atráz do *Sql*, temos também um sistema de gerenciamento de dados em nuvem na lista, o *AWS* de propriedade da *Amazon*.
+
+| Ferramenta | Numero de Vagas |
+|------------|-----------------|
+| python     |      10.390     |
+| sql        |      7.488      |
+| r          |      4.674      |
+| aws        |      2.593      |
+| tableau    |      2.458      |
+
+#### Engenheiro de Dados
+Agora para *Engenheiros de Dados* temos um enfoque maior em ferramentas de banco de dados, com agora dois seviços de gerenciamento de dados em nuvem, o *Azure* da *Microsoft* e o *AWS*, bem como *sql* e *python*.
+
+| Ferramenta | Numero de Vagas |
+|------------|-----------------|
+| sql        |      14.213     |
+| python     |      13.893     |
+| aws        |      8.570      |
+| azure      |      6.997      |
+| spark      |      6.612      |
+
+### 3. Quais habilidades estão listadas nas vagas com os maiores salários?
