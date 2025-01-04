@@ -9,8 +9,8 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
-1. [Quais empregos na área de dados possuem os maiores salários?](#Quais-empregos-na-área-de-dados-possuem-os-maiores-salários-?)
-2. [Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?](###2.-Quais-as-ferramentes-mais-populares-entre-analista,-engenheiros-e-cientistas-de-dados?)
+1. Quais empregos na área de dados possuem os maiores salários?
+2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
 3. Quais habilidades estão listadas nas vagas com os maiores salários?
 4. Em quais paises há os maiores salários para cientistas de dados?
 5. Quais as Habilidades associadas aos maiores salários?
@@ -230,3 +230,56 @@ Agora para *Engenheiros de Dados* temos um enfoque maior em ferramentas de banco
 | spark      |      6.612      |
 
 ### 3. Quais habilidades estão listadas nas vagas com os maiores salários?
+Agora será preciso filtrar quais ferramentas aparecem nas vagas com os maiores salários, assim extrairesmos estes dados para uma análise gráfica, e com isso termos um entendimento melhor.
+```sql
+WITH top_paying_jobs AS (
+    SELECT	
+        job_id,
+        job_title,
+        salary_year_avg,
+        name AS company_name
+    FROM
+        job_postings_fact
+    LEFT JOIN company_dim ON job_postings_fact.company_id = company_dim.company_id
+    WHERE
+        job_title_short = 'Data Analyst' AND 
+        job_location = 'Anywhere' AND 
+        salary_year_avg IS NOT NULL
+    ORDER BY
+        salary_year_avg DESC
+    LIMIT 10)
+
+SELECT 
+    top_paying_jobs.*,
+    skills
+FROM top_paying_jobs
+INNER JOIN skills_job_dim ON top_paying_jobs.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+ORDER BY
+    salary_year_avg DESC;
+```
+Após executar esta Query, os dados foram extaridos em um arquivo .csv para serem anlisados no *R*, com isso foi construido um histograma com a frequancia na qual cada ferramenta aparece no eixo *x* e seu nome no eixo *y*, seguindo o código abaixo:
+```r
+library(tidyverse)
+library(forcats)
+
+dados <- read.csv("local do arquivo .csv em seu computador")
+view(dados)
+colnames(dados)
+
+contagem = dados %>%
+  count(skills)
+
+contagem %>%
+  mutate(skills = fct_reorder(skills, n)) %>%
+  ggplot(aes(x = n, y = skills)) + 
+  geom_bar(stat = "identity" , fill = "blue") +
+  labs(x = "Frequência", y = "Ferramenta",
+       title = "Frequência das Ferramentas Presentas nas Vagas com Maiores Salários",
+       subtitle = "Dados do ano de 2023")
+
+```
+Pelo gráfico podemos notar que:
+- O *Sql* segue como a linguagem para banco de dados relacionais mais popular, sendo assim bastante rexcomendada tela em seu currículo.
+- O *Python* novamente se encontra ascima do *R* em uso, talvez por suas bibliotecas com ferramentas de inteligência artificial, um mercado com a demanda cada vez maior.
+- *Azure* e *Aws* empatam como ferramentas de nuvem, sendo assim ambas ótimas opções.
