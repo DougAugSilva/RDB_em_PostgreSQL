@@ -13,7 +13,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
 3. Quais habilidades estão listadas nas vagas com os maiores salários?
 4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
-5. Quais as melhores habilidades para se aprender baseando-se nos dados?
+5. Quais as melhores ferramentas para se aprender baseando-se nos dados?
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
@@ -327,6 +327,6 @@ Com os dados que obtemos da consulta podemos contruir a tabela abaixo, nela pode
 | rust        | $ 161.879           |
 | watson      | $ 161.471           |
 
-### 5. Quais as melhores habilidades para se aprender baseando-se nos dados?
+### 5. Quais as melhores ferramentas para se aprender baseando-se nos dados?
 
 
