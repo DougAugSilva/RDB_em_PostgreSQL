@@ -166,7 +166,8 @@ dados %>%
     geom_bar(stat = "identity", fill = "blue") +
     labs(x = "Média Salarial Anual em Dólares", y = "Nome da Vaga",
          title = "Salários por Vaga na Área de Dados",
-         caption = "Escala em notação científica" )
+         subtitle = "Dados do ano de 2023",
+         caption = "Escala em notação científica", )         
 ```
 A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado, com isso me foi retornado o seguinte gráfico. Agora com o gráfico podenmos notar mais facilmente as relções das vagas com os salários.
 
