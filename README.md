@@ -13,7 +13,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
 3. Quais habilidades estão listadas nas vagas com os maiores salários?
 4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
-5. Quais as melhores habilidades para se aprender baseado nos dados?
+5. Quais as melhores habilidades para se aprender baseando-se nos dados?
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
@@ -307,10 +307,11 @@ ORDER BY
     avg_salary DESC
 LIMIT 10;
 ```
-Com os daddos que obtemos, podemos contruir a tabela abaixo, nela podemos notal algumas coisas:
--
--
--
+Com os dados que obtemos da consulta podemos contruir a tabela abaixo, nela podemos notar que:
+- Há uma grande demanda por conhecimento em banco de dados que não são baseados seomente em SQL, como *mongoDB* e *neo4j*, tornando evidente a manipulação de estruturas de dados mais complexas nestas vagas.
+- Também se torna clara uma demanda por conhecimentos em legislação e regulamentos gerais de proteção de dados, o que fica evidente por *GPDR* estar em ssegundo lugar.
+- De linguagens de programação temo o *R* com sua biblioteca *tidyverse*, o *Rust* que é uma linguagem de programação por si só assim como o *solidity*, deixando evidente uma demanda por conhecimentos de desenvolvimento de softwere.
+  
 
 | Ferramentas | Salário Médio Anual |
 |-------------|---------------------|
@@ -324,4 +325,7 @@ Com os daddos que obtemos, podemos contruir a tabela abaixo, nela podemos notal 
 | opencv      | $ 162.083           |
 | rust        | $ 161.879           |
 | watson      | $ 161.471           |
+
+### 5. Quais as melhores habilidades para se aprender baseando-se nos dados?
+
 
