@@ -13,7 +13,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
    
 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados
    
-3. Quais ferramentas estão listadas nas vagas com os maiores salários?
+3. Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?
    
 4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
    
@@ -240,7 +240,7 @@ Agora para *Engenheiros de Dados* temos um enfoque maior em ferramentas de banco
 | azure      |      6.997      |
 | spark      |      6.612      |
 
-### 3. Quais ferramentas estão listadas nas vagas com os maiores salários?
+### 3. Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?
 Agora será preciso filtrar quais ferramentas aparecem nas vagas com os maiores salários, assim extrairesmos estes dados para uma análise gráfica, e com isso termos um entendimento melhor.
 ```sql
 WITH top_paying_jobs AS (
@@ -386,7 +386,7 @@ Ao decorrer deste texto conseguimos criar um banco de dados relacional, bem como
  
 2. **Ferramentas Populares em cada Área:** *Python* e *SQL* aparecem em nos pirmeiros lugares de ferramentas com maiores demandas, junto com alguma ferramenta de visualisação de dados como *Tableau* e alguma de nuvem como *AWS*.
    
-3. **Ferramentas com os Maiores Salários:** Novamente SQL, Phython, Tableau aparecem no topo da lista, o que era de se esperar dado a grande demanda por tais ferrmanetas.
+3. **Ferramentas com os Maiores Salários:** Novamente SQL, Phython, Tableau aparecem no topo da lista das vagas de analistas de dados, o que era de se esperar dado a grande demanda por tais ferramentas.
 
 4. **Ferramentas que Mais Pagam:** Aqui vemos algumas ferrmanetas pouco convencionais, como os bancos de dados  mongoDB e neo4j e linguagem de programação solidity.
    
