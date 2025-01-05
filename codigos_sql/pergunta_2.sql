@@ -1,4 +1,3 @@
---Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
 SELECT 
     skills,
     COUNT(skills_job_dim.job_id) AS demand_count
