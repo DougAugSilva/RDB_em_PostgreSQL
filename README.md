@@ -11,7 +11,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 
 1. [Quais empregos na área de dados possuem os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
    
-2. [Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
+2. [Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL/edit/main/README.md#2-quais-as-ferramentes-mais-populares-entre-analista-engenheiros-e-cientistas-de-dados)
    
 3. [Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#3-quais-ferramentas-est%C3%A3o-listadas-nas-vagas-de-analistas-de-dados-com-os-maiores-sal%C3%A1rios)
    
