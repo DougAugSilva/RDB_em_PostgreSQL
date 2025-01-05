@@ -1,5 +1,4 @@
 -- Quais os salários baseando-se apenas nas habilidades exigidas na vaga?
-
 SELECT 
     skills,
     ROUND(AVG(salary_year_avg), 0) AS avg_salary
