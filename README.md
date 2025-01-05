@@ -11,13 +11,13 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 
 1. [Quais empregos na área de dados possuem os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
    
-2. Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados
+2. [Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
    
-3. Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?
+3. [Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#3-quais-ferramentas-est%C3%A3o-listadas-nas-vagas-de-analistas-de-dados-com-os-maiores-sal%C3%A1rios)
    
-4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
+4. [Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#4-qual-a-m%C3%A9dia-salarial-baseando-se-apenas-nas-ferramentas-exigidas-na-vaga)
    
-5. Quais as melhores ferramentas para se aprender baseando nos dados?
+5. [Quais as melhores ferramentas para se aprender baseando nos dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#5-quais-as-melhores-ferramentas-para-se-aprender-baseando-nos-dados)
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, além do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho dos analistas, dado sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
@@ -382,7 +382,7 @@ Com isso, montamos a seguinte tabela com as ferramenatas presentas nas vagas com
 ## Conclusão
 Ao decorrer deste texto conseguimos criar um banco de dados relacional, bem como responder perguntas imporatnates para quem quer entrar na área de dados, podendo assim tirar algumas conclyusões:
 
-1. **Vags com os Maiores Salários :** As vagas com os maiores saláris são para cientistas de dados seniors e para analistas de dados.
+1. **Vagas com os Maiores Salários :** As vagas com os maiores saláris são para cientistas de dados seniors e para analistas de dados.
  
 2. **Ferramentas Populares em cada Área:** *Python* e *SQL* aparecem em nos pirmeiros lugares de ferramentas com maiores demandas, junto com alguma ferramenta de visualisação de dados como *Tableau* e alguma de nuvem como *AWS*.
    
