@@ -15,8 +15,3 @@ WHERE
 ORDER BY
     salary_year_avg DESC
 LIMIT 10;
-
--- job title : grafico em barras
--- job_no_degree: grafico em pizza
--- job_work from home: grafico de pizza
--- job_location : grafico de mapa
