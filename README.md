@@ -218,7 +218,7 @@ LIMIT 5;
 ```
 Efetuando a Query acima para cada tipo de vaga, conseguis as seguintes resultados:
 #### Analista de Dados
-Para anlistas de vagas a ferramenta mais exigida é o *SQL*, tendo quase o dobro de exigencias em vagas que *Exel* que fica em segundo lugar. Já em termos de linguagem de programação o *python* fica a frente do *R* que nem aparece entre as 5 ferramentas mais utilizadas.
+Para *Anlistas de Dados* a ferramenta mais exigida é o *SQL*, tendo quase o dobro de exigencias em vagas que *Exel* que fica em segundo lugar. Já em termos de linguagem de programação o *python* fica a frente do *R* que nem aparece entre as 5 ferramentas mais utilizadas.
 
 | Ferramenta | Número de Vagas |
 |------------|-----------------|
