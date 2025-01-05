@@ -1,1 +1,1 @@
-*.myextension sql
+*.sql linguist-detectable=true
