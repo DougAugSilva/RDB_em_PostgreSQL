@@ -10,18 +10,26 @@ Como já citado, os dados incluem iformações sobre anuncio de vagas de emprego
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos na area de dados, sendo estas:
 
 1. Quais empregos na área de dados possuem os maiores salários?
-2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados?
-3. Quais habilidades estão listadas nas vagas com os maiores salários?
+   
+2. Quais as ferramentes mais populares entre analista, engenheiros e cientistads de dados
+   
+3. Quais ferramentas estão listadas nas vagas com os maiores salários?
+   
 4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
-5. Quais as melhores ferramentas para se aprender baseando-se nos dados?
+   
+5. Quais as melhores ferramentas para se aprender baseando nos dados?
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, alem do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho em conjuntos dos analistas, ddos sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
 ### Ferramentas Utilizadas
 - **PostgreSQL:** Utilizado para criar e admninistrar o banco de dados.
+  
 - **Visual Studio Code:** Utilizado para compilar os códiogos e Querys em SQL
+  
 - **SQL:** Utilizado para toda a parte de filtragfem, ordenação e extração dos dados.
+  
 - **R:** Utilizado para a geração dos gráficos na análise.
+  
 - **Draw.io:** Utilizado para cirar o diagrama do banco de dados relacional.
 
 ## Criando o Banco de Dados
@@ -174,7 +182,9 @@ A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado,
 ![grafico_1](https://github.com/DougAugSilva/RDB_em_PostgreSQL/blob/main/imagens/grafico_pegunta_1.png)
 
 - Primeiro notamos que os maiores salários são referentes as vagas de cientistas de dados, com as duas vagas de *Senior Data Scientist* somando masi de um milhão de dólares anuais, com a vaga *Data Scientist* sozinha somando mais de 900 mil dólares ao ano.
+  
 - A segunda area com os maiores salários são as de *Analistas de Dados*, possuindo salários anuais na casa dos 500 mil dólares.
+  
 - Embora apareça em menor quantidade nas vagas com os maiores salários, também há vagas de *Engenheiros de Dados*, com uma em particular de trabalho Hinbrido com salário que pode chegar até 600 mil dólares ao ano.
 
 ### 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?
@@ -230,7 +240,7 @@ Agora para *Engenheiros de Dados* temos um enfoque maior em ferramentas de banco
 | azure      |      6.997      |
 | spark      |      6.612      |
 
-### 3. Quais habilidades estão listadas nas vagas com os maiores salários?
+### 3. Quais ferramentas estão listadas nas vagas com os maiores salários?
 Agora será preciso filtrar quais ferramentas aparecem nas vagas com os maiores salários, assim extrairesmos estes dados para uma análise gráfica, e com isso termos um entendimento melhor.
 ```sql
 WITH top_paying_jobs AS (
@@ -310,23 +320,85 @@ LIMIT 10;
 ```
 Com os dados que obtemos da consulta podemos contruir a tabela abaixo, nela podemos notar que:
 - Há uma grande demanda por conhecimento em banco de dados que não são baseados seomente em SQL, como *mongoDB* e *neo4j*, tornando evidente a manipulação de estruturas de dados mais complexas nestas vagas.
+  
 - Também se torna clara uma demanda por conhecimentos em legislação e regulamentos gerais de proteção de dados, o que fica evidente por *GPDR* estar em ssegundo lugar.
+  
 - De linguagens de programação temo o *R* com sua biblioteca *tidyverse*, o *Rust* que é uma linguagem de programação por si só assim como o *solidity*, deixando evidente uma demanda por conhecimentos de desenvolvimento de softwere.
   
 
-| Ferramentas | Salário Médio Anual |
-|-------------|---------------------|
-| mongo       | $ 177.196           |
-| gdpr        | $ 170.953           |
-| neo4j       | $ 168.258           |
-| bitbucket   | $ 167.539           |
-| solidity    | $ 165.833           |
-| tidyverse   | $ 165.513           |
-| graphql     | $ 162.547           |
-| opencv      | $ 162.083           |
-| rust        | $ 161.879           |
-| watson      | $ 161.471           |
+| Ferramentas | Salário Médio Anual ($) |
+|-------------|-------------------------|
+| mongo       |   177.196               |
+| gdpr        |   170.953               |
+| neo4j       |   168.258               |
+| bitbucket   |   167.539               |
+| solidity    |   165.833               |
+| tidyverse   |   165.513               |
+| graphql     |   162.547               |
+| opencv      |   162.083               |
+| rust        |   161.879               |
+| watson      |   161.471               |
 
-### 5. Quais as melhores ferramentas para se aprender baseando-se nos dados?
+### 5. Quais as melhores ferramentas para se aprender baseando nos dados?
+Podemos combinar informações sobre demanda e salário para fromarmos uma Query para verificarmos quais as melhores ferramentas para se aprender para quem busca uma vaga como Analista, Cientista ou Engenheiro de dados. Para tal taréfa, foi montada a seguinte Query:
+```sql
+SELECT 
+    skills_dim.skill_id,
+    skills_dim.skills,
+    COUNT(skills_job_dim.job_id) AS demand_count,
+    ROUND(AVG(job_postings_fact.salary_year_avg), 0) AS avg_salary
+FROM job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    (job_title_short = 'Data Analyst'
+    OR job_title_short = 'Data Scientist'
+    OR job_title_short = 'Data Engineer')
+    AND salary_year_avg IS NOT NULL
+    AND job_work_from_home = True 
+GROUP BY
+    skills_dim.skill_id
+HAVING
+    COUNT(skills_job_dim.job_id) > 10
+ORDER BY
+    avg_salary DESC,
+    demand_count DESC
+LIMIT 10;
+```
+Com isso, montamos a seguinte tabela com as ferramenatas presentas nas vagas com os melhores salários de Analista, Cientista ou Engenheiro de dados.
+| ID da Ferramenta | Ferramenta | Contador de Demanda | Salário Médio Anual ($) |
+|------------------|------------|---------------------|-------------------------|
+| 58               | neo4j      | 12                  | 168.258                 |
+| 27               | golang     | 14                  | 156.321                 |
+| 63               | cassandra  | 29                  | 154.581                 |
+| 213              | kubernetes | 83                  | 153.447                 |
+| 26               | c          | 65                  | 152.603                 |
+| 219              | atlassian  | 14                  | 151.808                 |
+| 101              | pytorch    | 126                 | 151.699                 |
+| 99               | tensorflow | 136                 | 151.284                 |
+| 94               | numpy      | 92                  | 150.080                 |
+| 98               | kafka      | 150                 | 149.438                 |
+
+## Conclusão
+Ao decorrer deste texto conseguimos criar um banco de dados relacional, bem como responder perguntas imporatnates para quem quer entrar na área de dados, podendo assim tirar algumas conclyusões:
+
+1. **Vags com os Maiores Salários :** As vagas com os maiores saláris são para cientistas de dados seniors e para analistas de dados.
+ 
+2. **Ferramentas Populares em cada Área:** *Python* e *SQL* aparecem em nos pirmeiros lugares de ferramentas com maiores demandas, junto com alguma ferramenta de visualisação de dados como *Tableau* e alguma de nuvem como *AWS*.
+   
+3. **Ferramentas com os Maiores Salários:** Novamente SQL, Phython, Tableau aparecem no topo da lista, o que era de se esperar dado a grande demanda por tais ferrmanetas.
+
+4. **Ferramentas que Mais Pagam:** Aqui vemos algumas ferrmanetas pouco convencionais, como os bancos de dados  mongoDB e neo4j e linguagem de programação solidity.
+   
+5. **Melhores ferramentas para se aprender:** Por fim, conseguimos gerar uma tabela com as melhores ferramentas para se aprender, baseado em demanda e salário.
+    
+
+## O Que Eu Aprendi Durante o Projeto
+Durtante o desenvolvimento deste projeto pude aprender várias coisas, bem como aprofunar meu conhecimento em R e SQL que eu adiquir nos cursos do *Google Data Analist Certificate*, em resumo aprendi sobre:
+- **Criação de um banco de dados em PostgreeSQL:** Embora eu já tenha trabalho com SQL antes, eu sempre utilizei bancos de dados presentes no Google Cloud Plataform, sendo esta a primeira vez que tive a oportunidade de criar meu prórprio banco de dados relacional nativo em meu computador, desenvolvendo assim essa habilidade para projetos futuros.
+  
+- **Combinar Querys com Análises em R:** Outra habilidade importante desenvolvida durante o projeto foi a de combinar querys para a extraçaõ de amostras do conjunto de dados, com isso pude planejar a Query pensando já na análise posterior no *R*, combinando assim estas duas ferramentas.
+  
+- **Habilidades Analíticas:** Pude também desenvolver melhor minhas habiliades de análise, tais como fazer as perguntas certas para extrais o que se quer de um conjunto de dados tão extenso.
 
 
