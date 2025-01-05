@@ -17,7 +17,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
    
 4. [Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#4-qual-a-m%C3%A9dia-salarial-baseando-se-apenas-nas-ferramentas-exigidas-na-vaga)
    
-5. [Quais as melhores ferramentas para se aprender baseando nos dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#5-quais-as-melhores-ferramentas-para-se-aprender-baseando-nos-dados)
+5. [Quais as melhores ferramentas para se aprender baseado nos dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#5-quais-as-melhores-ferramentas-para-se-aprender-baseado-nos-dados)
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, além do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho dos analistas, dado sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
@@ -339,7 +339,7 @@ Com os dados que obtemos da consulta podemos contruir a tabela abaixo, nela pode
 | rust        |   161.879               |
 | watson      |   161.471               |
 
-### 5. Quais as melhores ferramentas para se aprender baseando nos dados?
+### 5. Quais as melhores ferramentas para se aprender baseado nos dados?
 Podemos combinar informações sobre demanda e salário para fromarmos uma Query para verificarmos quais as melhores ferramentas para se aprender para quem busca uma vaga como Analista, Cientista ou Engenheiro de dados. Para tal taréfa, foi montada a seguinte Query:
 ```sql
 SELECT 
