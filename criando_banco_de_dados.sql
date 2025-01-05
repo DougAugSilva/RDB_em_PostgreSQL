@@ -1,3 +1,6 @@
+-- Cria o banco de dados
+CREATE DATABASE sql_course;
+
 -- Cria a tabela company_dim com sua chave primária
 CREATE TABLE public.company_dim(
     company_id INT PRIMARY KEY,
