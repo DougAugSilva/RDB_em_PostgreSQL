@@ -9,7 +9,7 @@ Como já citado, os dados incluem iformações sobre anúncio de vagas de empreg
 ### Objetivos da Análise e Justificando o Uso do SQL
 O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos, sendo estas:
 
-1. Quais empregos na área de dados possuem os maiores salários?
+1. [Quais empregos na área de dados possuem os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
    
 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados
    
