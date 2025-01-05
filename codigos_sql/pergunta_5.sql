@@ -1,4 +1,3 @@
--- Quais as melhores ferramentas para se aprender baseando-se nos dados?
 SELECT 
     skills_dim.skill_id,
     skills_dim.skills,
