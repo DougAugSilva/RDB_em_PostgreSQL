@@ -1,4 +1,3 @@
--- Quais os empregos na área de dados possuem os maiores salários?
 SELECT	
     job_id,
 	job_title,
