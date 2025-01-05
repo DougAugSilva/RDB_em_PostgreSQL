@@ -1,6 +1,16 @@
 # Criando um RDB com PostgreSQL e <br/> Analisando Vagas de Emprego
 Este projeto é baseado no curso *SQL for Data Analytics* do analista de dados [Luke Barousse](https://github.com/lukebarousse), o projeto consiste em criar um banco de dados relacional (RDB) utilizando *PostgreSQL* integrado com *VsCode*. Serão adicionados ao banco de dados arquivos .csv contendo informações sobre anúncios de vagas de emprego na área de dados no ano de 2023. 
 
+## Sumário
+- [Criando o Banco de Dados](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#criando-o-banco-de-dados)
+  
+- [Análise dos Dados](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#an%C3%A1lise-dos-dados)
+  
+- [Conclusão](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#conclus%C3%A3o)
+  
+- [O Que Eu Aprendi Durante o Projeto](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#o-que-eu-aprendi-durante-o-projeto)
+
+
 ## Introdução
 ### Sobre os Dados
 Os dados para o projeto foram retirados de arquivos .csv disponíveis no [link](https://www.lukebarousse.com/sql) , sendo originalmente coletados no site desenvolvido pelo próprio Luke chamado [Top Skills for Data Nerds](https://www.datanerd.tech). <br/>
