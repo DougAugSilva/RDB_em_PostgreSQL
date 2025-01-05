@@ -1,4 +1,3 @@
--- Quais habilidades estão listadas nas vagas com os maiores salários?
 WITH top_paying_jobs AS (
     SELECT	
         job_id,
