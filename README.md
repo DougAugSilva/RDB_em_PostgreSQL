@@ -1,23 +1,18 @@
 # Criando um RDB com PostgreSQL e <br/> Analisando Vagas de Emprego
-Este projeto é baseado no curso *SQL for Data Analytics* do analista de dados [Luke Barousse](https://github.com/lukebarousse), o projeto consiste em criar um banco de dados relacional (RDB) utilizando *PostgreSQL* integrado com *VsCode*. Serão adicionados ao banco de dados arquivos .csv contendo informações sobre anúncios de vagas de emprego na área de dados no ano de 2023. 
-
-## Sumário
-- [Criando o Banco de Dados](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#criando-o-banco-de-dados)
-  
-- [Análise dos Dados](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#an%C3%A1lise-dos-dados)
-  
-- [Conclusão](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#conclus%C3%A3o)
-  
-- [O Que Eu Aprendi Durante o Projeto](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#o-que-eu-aprendi-durante-o-projeto)
-
+#### Douglas Augusto da Silva
+[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/dougaugsilva/)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DougAugSilva)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:douglasaugustosilva323@gmail.com)
 
 ## Introdução
+Este projeto é baseado no curso *SQL for Data Analytics* do analista de dados [Luke Barousse](https://github.com/lukebarousse), o projeto consiste em criar um banco de dados relacional (RDB) utilizando *PostgreSQL* integrado com *VsCode*. Serão adicionados ao banco de dados arquivos .csv contendo informações sobre anúncios de vagas de emprego na área de dados no ano de 2023. 
+
 ### Sobre os Dados
 Os dados para o projeto foram retirados de arquivos .csv disponíveis no [link](https://www.lukebarousse.com/sql) , sendo originalmente coletados no site desenvolvido pelo próprio Luke chamado [Top Skills for Data Nerds](https://www.datanerd.tech). <br/>
 Como já citado, os dados incluem iformações sobre anúncio de vagas de empregos na área de dados no ano de 2023, sendo divididos em 4 tabelas contendo informações como *job_location* (localização do trabalho) e *skills* (habilidades ou ferramentas), além é claro do slário de cada vaga.
 
-### Objetivos da Análise e Justificando o Uso do SQL
-O objetivo desta análise é responder 5 perguntas referentes as vagas de empregos, sendo estas:
+## Objetivos e Justificando o Uso do SQL
+O objetivo deste projeto é por em prática os conhecimentos de *SQL* e de *R* que adiquiri ao longo dos meus estudos, bem como desenvolver ainda mais habilidádes analíticas. Para tal, vou responder comn base nos dados as seguintes perguntas:
 
 1. [Quais empregos na área de dados possuem os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
    
@@ -31,7 +26,7 @@ O objetivo desta análise é responder 5 perguntas referentes as vagas de empreg
 
 O uso do SQL se faz necessário por conta da grande quantidade de dados que estamos trabalahando, além do que, o armazenamento dos dados em um banco de dados relacional facilita o trabalho dos analistas, dado sua organização e escalabilidade, dexando assim mais fácil análises futuras e possíves atualizações nos dados.
 
-### Ferramentas Utilizadas
+## Ferramentas Utilizadas
 - **PostgreSQL:** Utilizado para criar e administrar o banco de dados.
   
 - **Visual Studio Code:** Utilizado para compilar os códiogos e Querys em SQL.
@@ -41,6 +36,15 @@ O uso do SQL se faz necessário por conta da grande quantidade de dados que esta
 - **R:** Utilizado para a geração dos gráficos na análise.
   
 - **Draw.io:** Utilizado para cirar o diagrama do banco de dados relacional.
+
+## Sumário
+- [Criando o Banco de Dados](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#criando-o-banco-de-dados)
+  
+- [Análise dos Dados](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#an%C3%A1lise-dos-dados)
+  
+- [Conclusão](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#conclus%C3%A3o)
+  
+- [O Que Eu Aprendi Durante o Projeto](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#o-que-eu-aprendi-durante-o-projeto)
 
 ## Criando o Banco de Dados
 Os dados estão distribuídos em quatro tabelas, sendo a *job_postings_fact* a principal e com maior volume de dados, ela está conectada as tabelas *skills_job_dim* e *company_dim* pelas chaves *job_id* e *company_id*, sendo que *skills_job_dim* também está conecta a tabela *skills_dim* pela chave *skill_id* conforme mostra o diagrama abaixo.
