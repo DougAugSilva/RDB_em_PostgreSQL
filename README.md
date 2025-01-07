@@ -155,6 +155,8 @@ Portanto, o banco de dados relacional está criado e os dados prontos para a an�
 Criado o banco de dados, podemos realizar nossas análise efetuando Querys para responder nossas perguntas iniciais, serão também utilizados gráficos criados com a biblioteca *ggplot2* do *R* para um melhor entendimento dos dados coletados.
 
 ### 1. Quais empregos na área de dados possuem os maiores salários?
+[voltar ao topo](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#sum%C3%A1rio)
+
 Precisamos extrair do banco de dados as colunas conmtendo as infromações com o id da vaga de emprego, seu nome e ordenalos pola média salarial anual. Também vamos extrair mais algumas indormações com um `LEFT JOIN` entre as tabelas *ob_postings_fact* e *company_dim*, para ssim termos mais indromações sobre a companhia. Executamos a seguinte query:
 ```sql
 SELECT	
@@ -202,6 +204,7 @@ A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado,
 - Embora apareça em menor quantidade nas vagas com os maiores salários, também há vagas de *Engenheiros de Dados*, com uma em particular de trabalho Hinbrido com salário que pode chegar até 600 mil dólares ao ano.
 
 ### 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?
+[voltar ao topo](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#sum%C3%A1rio)
 
 Para responder a segunda pergunta efetuaremos a query abaixo, mudando apenas a clausula `job_title_short` dentro do `WHERE` para Analista, Cientista e Engenherio dr dados, efetuando assim três consultas ao banco de dados
 ```sql
@@ -255,6 +258,8 @@ Agora para *Engenheiros de Dados* temos um enfoque maior em ferramentas de banco
 | spark      |      6.612      |
 
 ### 3. Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?
+[voltar ao topo](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#sum%C3%A1rio)
+
 Agora será preciso filtrar quais ferramentas aparecem nas vagas com os maiores salários, assim extrairesmos estes dados para uma análise gráfica, e com isso termos um entendimento melhor.
 ```sql
 WITH top_paying_jobs AS (
@@ -312,6 +317,8 @@ Pelo gráfico podemos notar que:
 ![grafico_pergunta_3](https://github.com/DougAugSilva/RDB_em_PostgreSQL/blob/main/imagens/grafico_pergunta_3.png)
 
 ### 4. Qual a média salarial baseando-se apenas nas ferramentas exigidas na vaga?
+[voltar ao topo](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#sum%C3%A1rio)
+
 Vamos vereificar quaal o salários médio em uma vaga para quem sabe uma determinada ferramenta, sendo que vamos verificar vagas de Analistas, Cientistas e Engenheiros de dados. Para tal, executamos a seguinte Query:
 ```sql
 SELECT 
@@ -354,6 +361,8 @@ Com os dados que obtemos da consulta podemos contruir a tabela abaixo, nela pode
 | watson      |   161.471               |
 
 ### 5. Quais as melhores ferramentas para se aprender baseado nos dados?
+[voltar ao topo](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#sum%C3%A1rio)
+
 Podemos combinar informações sobre demanda e salário para fromarmos uma Query para verificarmos quais as melhores ferramentas para se aprender para quem busca uma vaga como Analista, Cientista ou Engenheiro de dados. Para tal taréfa, foi montada a seguinte Query:
 ```sql
 SELECT 
