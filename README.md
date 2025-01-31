@@ -16,7 +16,7 @@ O objetivo deste projeto é por em prática os conhecimentos de *SQL* e de *R* q
 
 1. [Quais empregos na área de dados possuem os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#1-quais-empregos-na-%C3%A1rea-de-dados-possuem-os-maiores-sal%C3%A1rios)
    
-2. [Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#2-quais-as-ferramentes-mais-populares-entre-analista-engenheiros-e-cientistas-de-dados)
+2. [Quais as ferramentes mais populares entre analistas, engenheiros e cientistas de dados?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#2-quais-as-ferramentes-mais-populares-entre-analistas-engenheiros-e-cientistas-de-dados)
    
 3. [Quais ferramentas estão listadas nas vagas de analistas de dados com os maiores salários?](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#3-quais-ferramentas-est%C3%A3o-listadas-nas-vagas-de-analistas-de-dados-com-os-maiores-sal%C3%A1rios)
    
@@ -203,7 +203,7 @@ A biblioteca *forcats* serve apenas para organizar as barras no gráfico gerado,
   
 - Embora apareça em menor quantidade nas vagas com os maiores salários, também há vagas de *Engenheiros de Dados*, com uma em particular de trabalho Hinbrido com salário que pode chegar até 600 mil dólares ao ano.
 
-### 2. Quais as ferramentes mais populares entre analista, engenheiros e cientistas de dados?
+### 2. Quais as ferramentes mais populares entre analistas, engenheiros e cientistas de dados?
 [voltar ao topo](https://github.com/DougAugSilva/RDB_em_PostgreSQL?tab=readme-ov-file#objetivos-e-justificando-o-uso-do-sql)
 
 Para responder a segunda pergunta efetuaremos a query abaixo, mudando apenas a clausula `job_title_short` dentro do `WHERE` para Analista, Cientista e Engenherio dr dados, efetuando assim três consultas ao banco de dados
